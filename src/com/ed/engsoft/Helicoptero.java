@@ -2,17 +2,18 @@ package com.ed.engsoft;
 
 import java.util.Scanner;
 
-public class Aviao extends Aeronave{	
-	public static final String NA_PISTA = "na pista";
-	public static final int TRIPULACAO_DO_AVIAO = 120;	
+public class Helicoptero extends Aeronave{	
 	
-	public Aviao(Scanner scanner, String cod) {
-		super(scanner, cod,NA_PISTA);		
-	}	
+	public static final String NO_HELIPORTO = "no heliporto";
+	public static final int TRIPULACAO_DO_HELICOPTERO = 5;
 
+	public Helicoptero(Scanner scanner, String cod) {
+		super(scanner, cod,NO_HELIPORTO); 
+	}		
+	
 	public int pousar() {
 		if(super.pousar()==Aeronave.OPERATION_SUCCESS_CODE){
-			localizacao = NA_PISTA;
+			localizacao = NO_HELIPORTO;
 			return Aeronave.OPERATION_FAIL_CODE;
 		}
 		else
@@ -21,12 +22,11 @@ public class Aviao extends Aeronave{
 
 	public int embarcar() {
 		if(super.embarcar()==Aeronave.OPERATION_SUCCESS_CODE){
-			tripulacao = TRIPULACAO_DO_AVIAO;
+			tripulacao = TRIPULACAO_DO_HELICOPTERO;
 			return Aeronave.OPERATION_SUCCESS_CODE;
 		}else
 			return Aeronave.OPERATION_FAIL_CODE;
 	}
-
 	
 
 }
