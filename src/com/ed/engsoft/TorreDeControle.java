@@ -32,75 +32,19 @@ public class TorreDeControle {
 	private void execute(int option) {
 		switch (option) {
 		case 1: {
-			System.out.println("Digite o código da aeronave e pressione enter.");
-			String cod = scanner.nextLine();
-			System.out.println();			
-
-			int tipoAeronave = OPCAO_INVALIDA;
-			while (tipoAeronave == OPCAO_INVALIDA) {
-				System.out.println("Escolha uma das opções:");
-				System.out.println("1-Avião comercial");
-				System.out.println("2-Helicoptero privado");
-				
-				try {
-					tipoAeronave = Integer.parseInt(scanner.nextLine());					
-				} catch (NumberFormatException e) {
-					System.out.println("Digite um número inteiro apenas.");
-				}
-				
-				if (tipoAeronave == 1)
-					aeronaves.put(cod, new Aviao(scanner, cod));
-				else if (tipoAeronave == 2)
-					aeronaves.put(cod, new Helicoptero(scanner, cod));
-				else{
-					tipoAeronave = OPCAO_INVALIDA;
-				}
-					
-			}					
-
-			System.out.println("Aeronave salva.");
-			System.out.println();
+			adicionarAeronave();
 			break;
 		}
 		case 2: {
-			if (!aeronaves.isEmpty())
-				for (String key : aeronaves.keySet())
-					System.out.println(key+" - "+aeronaves.get(key).getClass().getSimpleName());
-			else
-				System.out.println("Nenhuma aeronave cadastrada.");
-			System.out.println();
+			listarAeronaves();
 			break;
 		}
 		case 3: {
-			if (aeronaves.isEmpty()) {
-				System.out.println("Registre uma aeronave antes.");
-				System.out.println();
-				break;
-			}
-			System.out.println("Digite o código da aeronave.");
-			String key = scanner.nextLine();
-			if (!aeronaves.containsKey(key))
-				System.out.println("Aeronave de código " + key + " não disponível");
-			else
-				aeronaves.get(key).command();
-			System.out.println();
+			comandarAeronave();
 			break;
 		}
 		case 4: {
-			if (aeronaves.isEmpty()) {
-				System.out.println("Registre uma aeronave antes.");
-				System.out.println();
-				break;
-			}
-			System.out.println("Digite o código da aeronave a ser removida.");
-			String key = scanner.nextLine();
-			if (!aeronaves.containsKey(key))
-				System.out.println("Aeronave de código " + key + " não disponível");
-			else {
-				aeronaves.remove(key);
-				System.out.println("Aeronave de código " + key + " removida");
-			}
-			System.out.println();
+			removerAeronave();
 			break;
 		}
 		case 0: {
@@ -114,7 +58,7 @@ public class TorreDeControle {
 		}
 
 	}
-
+	
 	private void printOptions() {
 		System.out.println("Selecione uma opção.");
 		System.out.println("1-Adicionar aeronave");
@@ -123,5 +67,80 @@ public class TorreDeControle {
 		System.out.println("4-Remover aeronave");
 		System.out.println("0-Sair");
 	}
+	
+
+	private void adicionarAeronave() {
+		System.out.println("Digite o código da aeronave e pressione enter.");
+		String cod = scanner.nextLine();
+		System.out.println();			
+
+		int tipoAeronave = OPCAO_INVALIDA;
+		while (tipoAeronave == OPCAO_INVALIDA) {
+			System.out.println("Escolha uma das opções:");
+			System.out.println("1-Avião comercial");
+			System.out.println("2-Helicoptero privado");
+			
+			try {
+				tipoAeronave = Integer.parseInt(scanner.nextLine());					
+			} catch (NumberFormatException e) {
+				System.out.println("Digite um número inteiro apenas.");
+			}
+			
+			if (tipoAeronave == 1)
+				aeronaves.put(cod, new Aviao(scanner, cod));
+			else if (tipoAeronave == 2)
+				aeronaves.put(cod, new Helicoptero(scanner, cod));
+			else{
+				tipoAeronave = OPCAO_INVALIDA;
+			}
+				
+		}					
+
+		System.out.println("Aeronave salva.");
+		System.out.println();
+	}
+
+	private void listarAeronaves() {
+		if (!aeronaves.isEmpty())
+			for (String key : aeronaves.keySet())
+				System.out.println(key+" - "+aeronaves.get(key).getClass().getSimpleName());
+		else
+			System.out.println("Nenhuma aeronave cadastrada.");
+		System.out.println();
+	}
+
+	private void comandarAeronave() {
+		if (aeronaves.isEmpty()) {
+			System.out.println("Registre uma aeronave antes.");
+			System.out.println();
+			return;
+		}
+		System.out.println("Digite o código da aeronave.");
+		String key = scanner.nextLine();
+		if (!aeronaves.containsKey(key))
+			System.out.println("Aeronave de código " + key + " não disponível");
+		else
+			aeronaves.get(key).command();
+		System.out.println();		
+	}
+	
+	private void removerAeronave() {
+		if (aeronaves.isEmpty()) {
+			System.out.println("Registre uma aeronave antes.");
+			System.out.println();
+			return;
+		}
+		System.out.println("Digite o código da aeronave a ser removida.");
+		String key = scanner.nextLine();
+		if (!aeronaves.containsKey(key))
+			System.out.println("Aeronave de código " + key + " não disponível");
+		else {
+			aeronaves.remove(key);
+			System.out.println("Aeronave de código " + key + " removida");
+		}
+		System.out.println();
+		
+	}
+		
 
 }
