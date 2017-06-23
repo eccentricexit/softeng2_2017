@@ -27,6 +27,5 @@ public class Aviao extends Aeronave{
 			return Aeronave.OPERATION_FAIL_CODE;
 	}
 
-	
 
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Helicoptero extends Aeronave{	
 	
 	public static final String NO_HELIPORTO = "no heliporto";
-	public static final int TRIPULACAO_DO_HELICOPTERO = 5;
+	public static final int TRIPULACAO_DO_HELICOPTERO = 5;	
 
 	public Helicoptero(Scanner scanner, String cod) {
 		super(scanner, cod,NO_HELIPORTO); 
@@ -27,6 +27,8 @@ public class Helicoptero extends Aeronave{
 		}else
 			return Aeronave.OPERATION_FAIL_CODE;
 	}
+
+	
 	
 
 }

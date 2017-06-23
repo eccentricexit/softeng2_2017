@@ -9,7 +9,7 @@ public abstract class Aeronave {
 	public static int OPERATION_SUCCESS_CODE = 0;
 	
 	protected Scanner scanner;
-	protected String cod;
+	public String cod;
 	protected boolean emVoo = false;
 	public boolean isEmVoo() {
 		return emVoo;
@@ -86,8 +86,7 @@ public abstract class Aeronave {
 		System.out.println();
 		return OPERATION_SUCCESS_CODE;
 	}
-	
-	
+		
 	public int embarcar(){
 		if (emVoo) {
 			System.out.println("Impossível embarcar, aeronave em vôo.");
@@ -170,18 +169,18 @@ public abstract class Aeronave {
 	}
 	
 	
-	private void mostrarContagemTripulacao() {
+	public void mostrarContagemTripulacao() {
 		System.out.println("Pessoas na aeronave: "+tripulacao);
 		System.out.println();
 	}
 
-	protected void mostrarPosicao(){
+	public void mostrarPosicao(){
 		System.out.println("A aeronave está "+localizacao);
 		System.out.println();
 	}
 	
 	public int getTripulacao() {
 		return tripulacao;
-	}
+	}	
 	
 }

@@ -1,66 +1,71 @@
 package com.ed.engsoft.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
 import java.util.Scanner;
+
 import org.junit.Before;
 import org.junit.Test;
 
+import com.ed.engsoft.Aviao;
+import com.ed.engsoft.Helicoptero;
 import com.ed.engsoft.TorreDeControle;
 
-public class TorreDeControleTest {
+public class TorreDeControleTest {	
 
 	TorreDeControle torreDeControle;
-	
-	
+	Scanner scanner;
 	@Before
 	public void setUp() throws Exception {
-		torreDeControle = new TorreDeControle(new Scanner(System.in));
-	}
+		scanner = new Scanner(System.in);
+		torreDeControle = new TorreDeControle(scanner);
+	}	
 	
 	@Test
-	public void testOpcaoInvalida() {
-		fail("Not yet implemented");
-	}
+	public void testAdicionarAeronave() {
+		int countMapa = torreDeControle.aeronaves.size();
+		int countLista = torreDeControle.listarAvioes().size();
+		
+		String codAviao = "TEST001";
+		Aviao aviaoTeste = new Aviao(scanner,codAviao);
+		
+		torreDeControle.adicionarAeronave(aviaoTeste.cod, aviaoTeste);		
+		assertEquals(torreDeControle.listarAvioes().size(),countLista+1);
+		assertEquals(torreDeControle.aeronaves.size(),countMapa+1);
+		assertEquals(torreDeControle.aeronaves.containsKey(codAviao),true);
+		
+		
+		countLista = torreDeControle.listarHelicopteros().size();
+		
+		String codHeli = "TEST002";
+		Helicoptero helicopteroTeste = new Helicoptero(scanner,codHeli);
+		
+		torreDeControle.adicionarAeronave(helicopteroTeste.cod, helicopteroTeste);		
+		
+		assertEquals(torreDeControle.listarHelicopteros().size(),countLista+1);
+		assertEquals(torreDeControle.aeronaves.size(),countMapa+2);
+		assertEquals(torreDeControle.aeronaves.containsKey(codHeli),true);
+	}	
+
 	
 	@Test
-	public void testAdicionarAviao() {
-		fail("Not yet implemented");
+	public void testRemoverAeronave() {		
+		String codAviao = "TEST001";
+		Aviao aviaoTeste = new Aviao(scanner,codAviao);
+
+		String codHeli = "TEST002";
+		Helicoptero helicopteroTeste = new Helicoptero(scanner,codHeli);
+		
+		torreDeControle.adicionarAeronave(aviaoTeste.cod, aviaoTeste);		
+		torreDeControle.adicionarAeronave(helicopteroTeste.cod, helicopteroTeste);	
+		
+		assertEquals(torreDeControle.listarHelicopteros().size(),1);		
+		assertEquals(torreDeControle.listarAvioes().size(),1);
+		
+		torreDeControle.removerAeronave(aviaoTeste.cod);		
+		torreDeControle.removerAeronave(helicopteroTeste.cod);
 	}
-	
-	@Test
-	public void testAdicionarHelicoptero() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void testAdicionarAeronave_opcaoInvalida() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void testRemoverAeronave() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void testRemoverAeronaveNaoDisponivel() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void testListarAeronaves() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void testComandarAeronave() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void printOptions(){
-		fail("Not yet implemented");
-	}
-	
+
+		
 
 }

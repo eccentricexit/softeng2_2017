@@ -1,0 +1,17 @@
+Metodos a serem testados
+Aeronave 
+-decolar aeronave
+-desembarcar aeronave
+-embarcar aeronave
+
+Aviao
+-pousar
+-embarcar
+
+Helicoptero
+-pousar
+-embarcar
+
+Torre de Controle
+-adicionarAeronave
+-removerAeronave
