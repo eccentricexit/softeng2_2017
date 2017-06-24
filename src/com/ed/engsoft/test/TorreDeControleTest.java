@@ -64,6 +64,9 @@ public class TorreDeControleTest {
 		
 		torreDeControle.removerAeronave(aviaoTeste.cod);		
 		torreDeControle.removerAeronave(helicopteroTeste.cod);
+		
+		assertEquals(0,torreDeControle.listarHelicopteros().size());		
+		assertEquals(0,torreDeControle.listarAvioes().size());
 	}
 
 		
