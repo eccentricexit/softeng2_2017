@@ -1,6 +1,6 @@
 % Análise e Comparação dos Frameworks React, Angular e Vue
-% Matheus Faria de Alencar
-% November 25, 2017
+% Matheus Faria de Alencar - ETEP Faculdades - mtsalenc@gmail.com
+% Programação Para Internet I - Novembro 25, 2017
 
 Introdução
 ===========
@@ -69,4 +69,5 @@ Como resultado, todas as bibliotecas e frameworks analisadas oferecem um excelen
 Referências
 ========
 [1] Unicorn Supplies. https://medium.com/unicorn-supplies/angular-vs-react-vs-vue-a-2017-comparison-c5c52d620176
+
 [2] StackOverflow Survey 2017. https://stackoverflow.com
