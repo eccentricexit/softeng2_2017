@@ -37,25 +37,31 @@ Como já observamos, Angular e React são suportados e usados por grandes empres
 ![](https://cdn-images-1.medium.com/max/1600/1*vvRdTNyQNrDeAxBXzBbqQw.png)
 
 2. Longevidade
-De acordo com a última pesquisa da Stackoverflow 2017 , o React é amado por 67% dos desenvolvedores pesquisados e AngularJS em 52%. "Nenhum interesse em continuar desenvolvendo" registra números maiores para AngularJS (48%) vs. Reagir (33%). O Vue não está no Top 10 em nenhum dos dois casos. Depois, há a pesquisa statejs.com que compara " frameworks finais ". Os fatos mais interessantes: React e Angular têm 100% de consciência, e Vue é desconhecida de 23% das pessoas pesquisadas. Quanto à satisfação, o React obteve 92% para "usar novamente", Vue 89% e Angular 2 apenas 65%.
+De acordo com a última pesquisa da Stackoverflow 2017 , o React é amado por 67% dos desenvolvedores pesquisados e AngularJS em 52%. "Nenhum interesse em continuar desenvolvendo" registra números maiores para AngularJS (48%) vs. React (33%). O Vue não está no Top 10 em nenhum dos dois casos. Depois, há a pesquisa statejs.com que compara " frameworks finais ". Os fatos mais interessantes: React e Angular têm 100% de consciência, e Vue é desconhecida de 23% das pessoas pesquisadas. Quanto à satisfação, o React obteve 92% para "usar novamente", Vue 89% e Angular 2 apenas 65%.
 3. Comunidade
 Análise  estatística lista 36 pessoas na página da equipe angular, Vue lista 16 pessoas e React não possui uma página da equipe. 
+
 ![](https://cdn-images-1.medium.com/max/1600/1*JKPQhZwOGAAlViSYsUf--w.png)
-Em Github, Angular tem> 25.000 estrelas e 463 contribuidores, React tem> 70.000 estrelas e> 1.000 contribuidores, e Vue tem quase 60.000 estrelas e apenas 120 contribuidores. Você também pode verificar o Github Stars History para Angular, React e Vue . Mais uma vez, o Vue parece estar muito bem. De acordo com bestof.js , nos últimos três meses Angular 2 tem recebido uma média de 31 estrelas por dia, Reagir 74 estrelas e Vue.JS 107 estrelas. 
+
+Em Github, Angular tem> 25.000 estrelas e 463 contribuidores, React tem> 70.000 estrelas e> 1.000 contribuidores, e Vue tem quase 60.000 estrelas e apenas 120 contribuidores. Você também pode verificar o Github Stars History para Angular, React e Vue . Mais uma vez, o Vue parece estar muito bem. De acordo com bestof.js , nos últimos três meses Angular 2 tem recebido uma média de 31 estrelas por dia, React 74 estrelas e Vue.JS 107 estrelas. 
 4.  Curva de aprendizado
-Se você tem desenvolvedores de HTML internos que não querem aprender mais Javascript, é melhor escolher Angular ou Vue. Reagir implica mais Javascript (falamos sobre isso mais tarde).
-Você tem designers trabalhando perto do código? O usuário "pier25" anota no Reddit que Reagir faz sentido se você estiver trabalhando para o Facebook, onde todos são desenvolvedores de super-heróis . No mundo real, você nem sempre encontrará um designer que possa modificar o JSX - como tal, trabalhar com modelos HTML será muito mais fácil.
+Se você tem desenvolvedores de HTML internos que não querem aprender mais Javascript, é melhor escolher Angular ou Vue. React implica mais Javascript (falamos sobre isso mais tarde).
+Você tem designers trabalhando perto do código? O usuário "pier25" anota no Reddit que React faz sentido se você estiver trabalhando para o Facebook, onde todos são desenvolvedores de super-heróis . No mundo real, você nem sempre encontrará um designer que possa modificar o JSX - como tal, trabalhar com modelos HTML será muito mais fácil.
 A coisa boa sobre o quadro angular é que um novo desenvolvedor Angular 2 de outra empresa se familiarizará rapidamente com todas as convenções necessárias. Os projetos de reação são diferentes em termos de decisões arquitetônicas, e os desenvolvedores precisam se familiarizar com a configuração específica do projeto.
 5. Performance
 Há um flip-side para toda a funcionalidade: o quadro angular é bastante inchado. O tamanho do arquivo gzip é de 143k, em comparação com 23K para Vue e 43k para React.
+
 ![](https://cdn-images-1.medium.com/max/1600/1*gpq0Y-rRczJ5C3DI5_EUlw.png)
-Reagir e Vue têm um DOM virtual, que é suposto melhorar o desempenho. Se você está interessado nisso, você pode ler sobre as diferenças entre o DOM virtual e DOM , bem como os benefícios reais do Virtual DOM em react.js . Além disso, um dos autores do Virtual-DOM responde uma questão relacionada ao desempenho no Stackoverflow.
+
+React e Vue têm um DOM virtual, que é suposto melhorar o desempenho. Se você está interessado nisso, você pode ler sobre as diferenças entre o DOM virtual e DOM , bem como os benefícios reais do Virtual DOM em react.js . Além disso, um dos autores do Virtual-DOM responde uma questão relacionada ao desempenho no Stackoverflow.
+
 ![](https://cdn-images-1.medium.com/max/1600/1*YpbalqSUMYIYjXCduq7dcA.png)
+
 Para verificar o desempenho, eu verifiquei o excelente js-framework-benchmark . Você pode baixá-lo e executá-lo, ou veja a tabela de resultados interativa . Antes de verificar os resultados, você deve saber, que as estruturas estão traçando benchmarks - tal verificação de desempenho não deve ser usada para tomar decisões.
 
 Conclusão
 ========
-Como resultado, todas as bibliotecas e frameworks analisadas oferecem um excelente conjunto de possibilidades. Provavelmente a escolha em maior medida pode surgir com um problema, mas pode ser facilmente resolvida com a ajuda de um instrumento específico. Por exemplo, a Vue pode ser considerada como mais simples de usar, Reagir é um pouco mais "de uso geral", e a Angular pode realizar um desenvolvimento paralelo dentro de um único projeto. Deve-se notar que o Vue suporta JSX, mas essa abordagem na criação de Vue-applications raramente é usada.
+Como resultado, todas as bibliotecas e frameworks analisadas oferecem um excelente conjunto de possibilidades. Provavelmente a escolha em maior medida pode surgir com um problema, mas pode ser facilmente resolvida com a ajuda de um instrumento específico. Por exemplo, a Vue pode ser considerada como mais simples de usar, React é um pouco mais "de uso geral", e a Angular pode realizar um desenvolvimento paralelo dentro de um único projeto. Deve-se notar que o Vue suporta JSX, mas essa abordagem na criação de Vue-applications raramente é usada.
 
 Referências
 ========
